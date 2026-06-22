@@ -1,25 +1,26 @@
 # Configuration & Credentials Reference
 
-hack.chat is anonymous, so the bridge needs no chat credentials — only a channel and a nickname, plus a HiveMind access key. All are passed to `connect_hackchat_to_hivemind(...)` in `hackchat_bridge/__main__.py`.
+hack.chat is anonymous, so the bridge needs no chat credentials — only a channel and a nickname, plus a HiveMind access key and password. All are passed as options to the `hivemind-hackchat-bridge` console script.
 
 ## hack.chat parameters
 
-| Parameter | Meaning |
+| Option | Meaning |
 | --- | --- |
-| `channel` | The hack.chat channel name to join. Channels are created on demand; anyone at `https://hack.chat/?<channel>` shares it. |
-| `username` | The nickname the bot uses in the channel. Default `Jarbas_BOT`. |
+| `--channel` | The hack.chat channel name to join. Channels are created on demand; anyone at `https://hack.chat/?<channel>` shares it. |
+| `--username` | The nickname the bot uses in the channel. Default `Jarbas_BOT`. |
 
 The bridge connects to `wss://hack.chat/chat-ws` and keeps the connection alive with a periodic ping.
 
 ## HiveMind credentials
 
-| Parameter | Meaning | Default |
+| Option | Meaning | Default |
 | --- | --- | --- |
-| `host` | HiveMind hub host (`wss://` or `ws://`). | `wss://127.0.0.1` |
-| `port` | HiveMind hub port. | `5678` |
-| `key` | HiveMind access key from `hivemind-core add-client`. | `unsafe` |
-| `crypto_key` | Optional pre-shared payload crypto key. | `None` |
-| `name` | Terminal name reported to the hub. | `JarbasHackChatBridge` |
+| `--host` | HiveMind hub host (`wss://` or `ws://`). | `ws://127.0.0.1` |
+| `--port` | HiveMind hub port. | `5678` |
+| `--access-key` | HiveMind access key from `hivemind-core add-client`. | `None` |
+| `--password` | HiveMind password from `hivemind-core add-client`. | `None` |
+| `--self-signed` | Accept self-signed SSL certificates. | off |
+| `--lang` | Language code for forwarded utterances. | `en-us` |
 
 ## Message handling
 

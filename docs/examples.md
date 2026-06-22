@@ -2,24 +2,30 @@
 
 ## Run the bridge
 
-Configure the call at the bottom of `hackchat_bridge/__main__.py`:
-
-```python
-from hackchat_bridge.__main__ import connect_hackchat_to_hivemind
-
-connect_hackchat_to_hivemind(
-    channel="your_channel",
-    username="Jarbas_BOT",
-    host="wss://127.0.0.1",
-    port=5678,
-    key="your-access-key",
-)
+```bash
+hivemind-hackchat-bridge \
+  --channel your_channel \
+  --username Jarbas_BOT \
+  --access-key "your-access-key" \
+  --password "your-password" \
+  --host ws://127.0.0.1 \
+  --port 5678
 ```
 
-Then start it:
+Or embed it in your own code:
 
-```bash
-python -m hackchat_bridge
+```python
+from hackchat_bridge import JarbasHackChatBridge
+
+bridge = JarbasHackChatBridge(
+    username="Jarbas_BOT",
+    channel="your_channel",
+    access_key="your-access-key",
+    password="your-password",
+    host="ws://127.0.0.1",
+    port=5678,
+)
+bridge.run()
 ```
 
 ## A conversation
