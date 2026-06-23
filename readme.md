@@ -85,4 +85,6 @@ The bridge forwards every channel message except its own, stripping a leading `@
 
 ## Documentation
 
-See [`docs/`](docs/) for a full setup walkthrough, a configuration reference, and worked examples.
+- **[Operator setup](docs/operator-setup.md)** — hack.chat is anonymous (no account/token); registering the bridge on a HiveMind hub, the run command, and the network-only live e2e.
+
+See also [`docs/`](docs/) for a full setup walkthrough, a configuration reference, and worked examples.
