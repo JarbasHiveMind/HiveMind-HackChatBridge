@@ -18,16 +18,19 @@ hack.chat channel  ⇄  HiveMind-HackChatBridge  ⇄  HiveMind hub  ⇄  OVOS sk
 
 ## Install
 
-This repo has no published package. Install the runtime dependencies and run from a checkout:
+```bash
+pip install HiveMind-HackChatBridge
+```
+
+Or from a checkout:
 
 ```bash
 git clone https://github.com/JarbasHiveMind/HiveMind-HackChatBridge
 cd HiveMind-HackChatBridge
-pip install -r requirements.txt
-pip install websocket-client   # imported by hackchat.py, not pinned in requirements.txt
+pip install .
 ```
 
-Declared dependencies: `jarbas_hive_mind<=0.8.0`, `ovos_utils`.
+Declared dependencies: `hivemind-bus-client`, `ovos-bus-client`, `ovos-utils`, `websocket-client`, `click`.
 
 ## Quickstart
 
@@ -38,24 +41,16 @@ hivemind-core add-client --name hackchat-bridge \
   --access-key "your-access-key" --password "your-password"
 ```
 
-**2. Configure the bridge.** The entry point is `connect_hackchat_to_hivemind(...)` in `hackchat_bridge/__main__.py`. Edit the call at the bottom of that file:
-
-```python
-from hackchat_bridge.__main__ import connect_hackchat_to_hivemind
-
-connect_hackchat_to_hivemind(
-    channel="your_channel",                  # hack.chat channel to join
-    username="Jarbas_BOT",                   # bot nickname
-    host="wss://127.0.0.1",                  # HiveMind hub host
-    port=5678,                               # HiveMind hub port
-    key="your-access-key",                   # HiveMind access key
-)
-```
-
-**3. Run it:**
+**2. Run the bridge.** Configuration is passed on the command line via the `hivemind-hackchat-bridge` console script (or `python -m hackchat_bridge`):
 
 ```bash
-python -m hackchat_bridge
+hivemind-hackchat-bridge \
+  --channel your_channel \
+  --username Jarbas_BOT \
+  --access-key "your-access-key" \
+  --password "your-password" \
+  --host ws://127.0.0.1 \
+  --port 5678
 ```
 
 **4. Send a message.** Open the same channel at `https://hack.chat/?your_channel` and type:
@@ -68,25 +63,28 @@ The bridge forwards the message to the hub and posts the reply back as `@user , 
 
 ## Configuration
 
-`connect_hackchat_to_hivemind(...)` parameters:
+`hivemind-hackchat-bridge` options:
 
-| Parameter | Description | Default |
+| Option | Description | Default |
 | --- | --- | --- |
-| `channel` | hack.chat channel name to join | — |
-| `username` | Bot nickname shown in the channel | `Jarbas_BOT` |
-| `host` | HiveMind hub host (`wss://` / `ws://`) | `wss://127.0.0.1` |
-| `port` | HiveMind hub port | `5678` |
-| `key` | HiveMind access key | `unsafe` |
-| `crypto_key` | Optional HiveMind payload crypto key | `None` |
+| `--channel` | hack.chat channel name to join | — (required) |
+| `--username` | Bot nickname shown in the channel | `Jarbas_BOT` |
+| `--host` | HiveMind hub host (`wss://` / `ws://`) | `ws://127.0.0.1` |
+| `--port` | HiveMind hub port | `5678` |
+| `--access-key` | HiveMind access key | `None` |
+| `--password` | HiveMind password | `None` |
+| `--self-signed` | Accept self-signed SSL certificates | off |
+| `--lang` | Language code for utterances | `en-us` |
 
 The bridge forwards every channel message except its own, stripping a leading `@username` mention of the bot before sending.
 
 ## Troubleshooting
 
-- **`ModuleNotFoundError: websocket`** — install `websocket-client` (it is imported by `hackchat.py` but not pinned).
-- **Bot joins but never answers** — confirm the hub is reachable and the access key is registered (`hivemind-core list-clients`), and that the hub produces a `speak` for the answer.
+- **Bot joins but never answers** — confirm the hub is reachable and the access key/password are registered (`hivemind-core list-clients`), and that the hub produces a `speak` for the answer.
 - **Wrong channel** — the bot and the user must be on the same hack.chat channel name; open `https://hack.chat/?<channel>`.
 
 ## Documentation
 
-See [`docs/`](docs/) for a full setup walkthrough, a configuration reference, and worked examples.
+- **[Operator setup](docs/operator-setup.md)** — hack.chat is anonymous (no account/token); registering the bridge on a HiveMind hub, the run command, and the network-only live e2e.
+
+See also [`docs/`](docs/) for a full setup walkthrough, a configuration reference, and worked examples.

@@ -7,7 +7,7 @@ From nothing to a working hack.chat bot backed by a HiveMind hub.
 The bridge is a HiveMind satellite with two connections:
 
 - **To hack.chat** — it opens a websocket to `wss://hack.chat/chat-ws` and joins a channel with a nickname. hack.chat is anonymous, so no credentials are needed.
-- **To the HiveMind hub** — it connects as a HiveMind terminal using an access key.
+- **To the HiveMind hub** — it connects with a `HiveMessageBusClient` using an access key and password.
 
 Each channel message (other than the bot's own) becomes a `recognizer_loop:utterance` sent to the hub. The sender's nickname travels in the message context, so the hub's `speak` reply is posted back to the channel addressed to that user.
 
@@ -44,20 +44,21 @@ hack.chat channels are created on the fly — just choose a name. Anyone who ope
 ## Step 4 — Install the bridge
 
 ```bash
-git clone https://github.com/JarbasHiveMind/HiveMind-HackChatBridge
-cd HiveMind-HackChatBridge
-pip install -r requirements.txt
-pip install websocket-client
+pip install HiveMind-HackChatBridge
 ```
 
-`websocket-client` is imported by `hackchat.py` but not pinned in `requirements.txt`; install it explicitly.
+## Step 5 — Run
 
-## Step 5 — Configure and run
-
-Edit the call to `connect_hackchat_to_hivemind(...)` at the bottom of `hackchat_bridge/__main__.py` with your `channel`, bot `username`, and HiveMind `host`/`port`/`key`. Then:
+Pass your `channel`, bot `username`, and HiveMind `host`/`port`/`access-key`/`password` on the command line:
 
 ```bash
-python -m hackchat_bridge
+hivemind-hackchat-bridge \
+  --channel your_channel \
+  --username Jarbas_BOT \
+  --access-key "your-access-key" \
+  --password "your-password" \
+  --host ws://127.0.0.1 \
+  --port 5678
 ```
 
 ## Step 6 — Talk to it
