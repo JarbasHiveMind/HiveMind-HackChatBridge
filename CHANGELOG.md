@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.0a3](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.0a3) (2026-07-31)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.0a2...0.1.0a3)
+
+**Merged pull requests:**
+
+- docs: rewrite README in Simplified Technical English [\#12](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/12) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.0a2](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.0a2) (2026-06-23)
 
 [Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/f1e5f2f08d30ec9f2a0bf1e7483d9ded60383f18...0.1.0a2)
