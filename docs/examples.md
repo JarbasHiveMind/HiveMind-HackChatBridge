@@ -58,4 +58,7 @@ chat.on_message += [echo]
 chat.run()
 ```
 
-If the echo bot mirrors messages in the channel, the hack.chat half is working and you can move on to wiring the HiveMind half.
+If the echo bot mirrors messages in the channel, the hack.chat half is working, and you can move on to wiring the HiveMind half.
+
+---
+[← Configuration](configuration.md) · [Home](../readme.md)
