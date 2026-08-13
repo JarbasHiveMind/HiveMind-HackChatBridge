@@ -1,3 +1,5 @@
+import time
+
 from ovos_utils import create_daemon
 from ovos_utils.log import LOG
 
@@ -118,6 +120,17 @@ class JarbasHackChatBridge:
             self.speak("I don't know how to answer that", user_data)
 
     def run(self):
-        """Connect to hack.chat and block forever."""
+        """Connect to hack.chat and block forever.
+
+        ``self.bus.connect()`` (called from ``__init__``) already starts the
+        HiveMind websocket reconnect lifecycle in a background thread, so the
+        client is fully connected by the time ``run()`` is called. Calling
+        ``self.bus.run_forever()`` here would try to claim that same
+        lifecycle a second time and raise ``RuntimeError("HiveMind websocket
+        reconnect worker is already running")``, causing the bridge to churn
+        and never stabilize. Block this thread some other way instead of
+        re-starting the worker.
+        """
         self.connect_hackchat()
-        self.bus.run_forever()
+        while True:
+            time.sleep(1)
