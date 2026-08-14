@@ -41,6 +41,15 @@ hivemind-core add-client --name hackchat-bridge \
   --access-key "your-access-key" --password "your-password"
 ```
 
+A new client is registered but mute: the hub denies every message type until you whitelist it. Do this next, or the bridge will connect and never answer:
+
+```bash
+hivemind-core allow-msg recognizer_loop:utterance hackchat-bridge
+hivemind-core allow-msg speak hackchat-bridge
+```
+
+If you run more than one bridge on the same host, give each its own credentials. Bridges sharing an identity share a Noise session pin, and the hub treats reconnects from either as the same client, breaking encryption for both.
+
 2. Run the bridge. Pass the configuration on the command line, using the `hivemind-hackchat-bridge` console script (or `python -m hackchat_bridge`):
 
 ```bash
@@ -82,6 +91,10 @@ The bridge forwards every channel message except its own, and strips a leading `
 
 - **Bot joins but never answers.** Confirm the hub is reachable and the access key and password are registered (`hivemind-core list-clients`), and that the hub produces a `speak` for the answer.
 - **Wrong channel.** The bot and the user must join the same hack.chat channel name. Open `https://hack.chat/?<channel>`.
+- **Bridge connects but never replies.** The client is registered but not whitelisted. Run `hivemind-core allow-msg recognizer_loop:utterance hackchat-bridge` and `hivemind-core allow-msg speak hackchat-bridge` on the hub.
+- **`invalid api key` at connect time.** The hub rejected the handshake, usually because the bridge or `hivemind-bus-client` is older than the hub. Upgrade the bridge.
+- **"reconnect worker already running" in the log.** A known issue in older `hivemind-bus-client` releases when a dropped connection retries overlap. Fixed upstream; upgrade `hivemind-bus-client` and the bridge.
+- **Handshake fails after the hub was reinstalled or the client's key changed.** The bridge is holding a stale Noise session pin. Clear it on the hub with `hivemind-core reset-noise-pin hackchat-bridge` and restart the bridge.
 
 ## Documentation
 

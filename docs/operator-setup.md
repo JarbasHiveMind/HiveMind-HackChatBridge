@@ -71,6 +71,10 @@ The bridge forwards every channel message, except its own, to the hub as a `reco
 
 - hack.chat is anonymous and public. **Anyone** who joins the channel can reach the hub. Use an obscure channel name and restrict access at the hub with client ACLs (`allowed_types`).
 - The **HiveMind password** is the only secret here. Pass it through an environment variable or a secrets manager, never in shell history or a committed file.
+- A freshly registered client is denied every message type by default:
+  `hivemind-core allow-msg recognizer_loop:utterance hackchat-bridge` and
+  `hivemind-core allow-msg speak hackchat-bridge`. Skipping this leaves the
+  bridge connected but silent.
 
 ## Testing (live e2e)
 
