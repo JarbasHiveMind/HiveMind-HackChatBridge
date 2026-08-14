@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.1a1) (2026-08-14)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.0a3...0.1.1a1)
+
+**Merged pull requests:**
+
+- fix: raise hivemind-bus-client floor to \>=1.0.13a1, drop \<1.0.0 cap [\#17](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/17) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.0a3](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.0a3) (2026-07-31)
 
 [Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.0a2...0.1.0a3)
