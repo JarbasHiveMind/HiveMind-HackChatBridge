@@ -25,12 +25,14 @@ class JarbasHackChatBridge:
                  password=None,
                  self_signed=False,
                  lang="en-us",
-                 bus=None):
+                 bus=None,
+                 handshake_max_retries=10):
         self.status = "disconnected"
         self.username = username
         self.channel = channel
         self.lang = lang
         self.hackchat = None
+        self.handshake_max_retries = handshake_max_retries
 
         if bus:
             # got a connection already
@@ -42,7 +44,9 @@ class JarbasHackChatBridge:
                                             port=port,
                                             password=password,
                                             self_signed=self_signed)
-            self.bus.connect()
+            # bound the handshake retries, otherwise a stalled/unreachable
+            # hub or a wrong password makes connect() retry forever
+            self.bus.connect(handshake_max_retries=self.handshake_max_retries)
 
         self.bus.on_mycroft("speak", self.handle_speak)
         self.bus.on_mycroft("hive.complete_intent_failure",
