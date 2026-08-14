@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.2a1) (2026-08-14)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.1a1...0.1.2a1)
+
+**Merged pull requests:**
+
+- fix: bound handshake\_max\_retries on HiveMind connect\(\) [\#20](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/20) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.1a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.1a1) (2026-08-14)
 
 [Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.0a3...0.1.1a1)
