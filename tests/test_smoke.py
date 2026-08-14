@@ -68,6 +68,36 @@ def test_send_to_hivemind_emits_utterance():
     assert msg.context["user"]["hackchat_username"] == "alice"
 
 
+def test_connect_uses_bounded_handshake_retries(monkeypatch):
+    """connect() must be called with a non-None handshake_max_retries.
+
+    hivemind-bus-client >=1.0.13a1 defaults handshake_max_retries=None on
+    connect(), which retries the handshake forever if the hub is stalled,
+    unreachable, or the password is wrong. The bridge must always pass a
+    bounded value.
+    """
+    calls = []
+
+    class FakeHiveMessageBusClient:
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def connect(self, *args, **kwargs):
+            calls.append(kwargs)
+
+        def on_mycroft(self, msg_type, func):
+            pass
+
+    monkeypatch.setattr(hackchat_bridge, "HiveMessageBusClient",
+                        FakeHiveMessageBusClient)
+
+    JarbasHackChatBridge(username="Jarbas_BOT", channel="test_channel")
+
+    assert len(calls) == 1
+    assert "handshake_max_retries" in calls[0]
+    assert calls[0]["handshake_max_retries"] is not None
+
+
 def test_handle_speak_routes_back_to_user(monkeypatch):
     from ovos_bus_client import Message
 
