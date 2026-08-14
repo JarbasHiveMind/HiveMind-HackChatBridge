@@ -1,2 +1,5 @@
-jarbas_hive_mind<=0.8.0
-ovos_utils
+hivemind-bus-client>=1.0.13a1,<2.0.0
+ovos-utils
+ovos-bus-client
+websocket-client
+click
