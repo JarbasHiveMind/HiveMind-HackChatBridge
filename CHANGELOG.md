@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.2a2](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.2a2) (2026-08-15)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.2a1...0.1.2a2)
+
+**Merged pull requests:**
+
+- docs: add AGENTS.md with per-repo agent conventions [\#22](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/22) ([JarbasAl](https://github.com/JarbasAl))
+- ci: test, build and publish the container image [\#18](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/18) ([JarbasAl](https://github.com/JarbasAl))
+- Add Dockerfile [\#16](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/16) ([JarbasAl](https://github.com/JarbasAl))
+- docs: make the hub allow-msg whitelist step explicit [\#15](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/15) ([JarbasAl](https://github.com/JarbasAl))
+- fix: don't double-start the HiveMind bus client lifecycle [\#14](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/14) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.2a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.2a1) (2026-08-14)
 
 [Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.1a1...0.1.2a1)
