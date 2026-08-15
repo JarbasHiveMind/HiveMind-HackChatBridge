@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.2a3](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.2a3) (2026-08-15)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.2a2...0.1.2a3)
+
+**Merged pull requests:**
+
+- Update actions/checkout action to v7 [\#24](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/24) ([renovate[bot]](https://github.com/apps/renovate))
+- Update python Docker tag to v3.14 [\#23](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/23) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.1.2a2](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.2a2) (2026-08-15)
 
 [Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.2a1...0.1.2a2)
