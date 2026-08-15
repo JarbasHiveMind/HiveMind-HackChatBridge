@@ -37,6 +37,13 @@ hivemind-core add-client --name hackchat-bridge \
 
 Keep the access key. List clients with `hivemind-core list-clients`.
 
+A freshly registered client can connect, but the hub denies every message type until you whitelist it. Skipping this is the most common reason a bridge connects but never replies:
+
+```bash
+hivemind-core allow-msg recognizer_loop:utterance hackchat-bridge
+hivemind-core allow-msg speak hackchat-bridge
+```
+
 ## Step 3: pick a channel and nickname
 
 hack.chat channels are created on the fly. Just choose a name. Anyone who opens `https://hack.chat/?<channel>` is in that channel. Pick a nickname for the bot.
