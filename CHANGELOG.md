@@ -1,0 +1,79 @@
+# Changelog
+
+## [0.1.4a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.4a1) (2026-09-01)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.3a1...0.1.4a1)
+
+**Merged pull requests:**
+
+- fix\(ci\): install hivescope from the published release, not a deleted git branch [\#34](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/34) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.1.3a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.3a1) (2026-09-01)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.2a3...0.1.3a1)
+
+**Merged pull requests:**
+
+- fix\(deps\): raise floor pins to the proven HiveMind stack [\#32](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/32) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.1.2a3](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.2a3) (2026-08-15)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.2a2...0.1.2a3)
+
+**Merged pull requests:**
+
+- Update actions/checkout action to v7 [\#24](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/24) ([renovate[bot]](https://github.com/apps/renovate))
+- Update python Docker tag to v3.14 [\#23](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/23) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [0.1.2a2](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.2a2) (2026-08-15)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.2a1...0.1.2a2)
+
+**Merged pull requests:**
+
+- docs: add AGENTS.md with per-repo agent conventions [\#22](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/22) ([JarbasAl](https://github.com/JarbasAl))
+- ci: test, build and publish the container image [\#18](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/18) ([JarbasAl](https://github.com/JarbasAl))
+- Add Dockerfile [\#16](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/16) ([JarbasAl](https://github.com/JarbasAl))
+- docs: make the hub allow-msg whitelist step explicit [\#15](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/15) ([JarbasAl](https://github.com/JarbasAl))
+- fix: don't double-start the HiveMind bus client lifecycle [\#14](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/14) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.1.2a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.2a1) (2026-08-14)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.1a1...0.1.2a1)
+
+**Merged pull requests:**
+
+- fix: bound handshake\_max\_retries on HiveMind connect\(\) [\#20](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/20) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.1.1a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.1a1) (2026-08-14)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.0a3...0.1.1a1)
+
+**Merged pull requests:**
+
+- fix: raise hivemind-bus-client floor to \>=1.0.13a1, drop \<1.0.0 cap [\#17](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/17) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.1.0a3](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.0a3) (2026-07-31)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.0a2...0.1.0a3)
+
+**Merged pull requests:**
+
+- docs: rewrite README in Simplified Technical English [\#12](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/12) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.1.0a2](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.0a2) (2026-06-23)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/f1e5f2f08d30ec9f2a0bf1e7483d9ded60383f18...0.1.0a2)
+
+**Merged pull requests:**
+
+- feat!: port to hivemind-bus-client 2.x and package for release [\#10](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/10) ([JarbasAl](https://github.com/JarbasAl))
+- docs: zero-to-hero README and docs [\#7](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/7) ([JarbasAl](https://github.com/JarbasAl))
+- Update actions/setup-python action to v6 [\#6](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/6) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v6 [\#5](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/5) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency python to 3.14 [\#3](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/3) ([renovate[bot]](https://github.com/apps/renovate))
+- Configure Renovate [\#1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/1) ([renovate[bot]](https://github.com/apps/renovate))
+
+
+
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*

@@ -1,0 +1,24 @@
+name: E2E Tests
+
+# Real end-to-end tests (tests/e2e/). These boot a REAL hivemind-core hub via
+# hivescope's loopback topology and drive the bridge's production
+# HiveMessageBusClient code path over an actual localhost WebSocket — no mocks
+# on the HiveMind side. The live hack.chat test self-skips when wss://hack.chat
+# egress is unavailable on the runner.
+#
+# hivescope comes from the published release (>=0.8.0a1, pinned in the [e2e]
+# extra), which carries the loopback whitelist-only + get_client_by_id fixes.
+
+on:
+  pull_request:
+    branches: [dev, master]
+  workflow_dispatch:
+
+jobs:
+  e2e:
+    uses: OpenVoiceOS/gh-automations/.github/workflows/build-tests.yml@dev
+    with:
+      python_versions: '["3.10", "3.11", "3.12", "3.13"]'
+      install_extras: 'e2e'
+      test_path: 'tests/e2e/'
+      pr_comment: false
