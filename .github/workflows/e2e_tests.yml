@@ -6,11 +6,8 @@ name: E2E Tests
 # on the HiveMind side. The live hack.chat test self-skips when wss://hack.chat
 # egress is unavailable on the runner.
 #
-# hivescope is pulled from the fix/loopback-whitelist-only-connection branch via
-# pre_install_pip: the published release still passes the removed
-# msg_/skill_/intent_blacklist kwargs to HiveMindClientConnection (the
-# whitelist-only model) and lacks get_client_by_id, so the loopback hub crashes
-# mid-handshake without it.
+# hivescope comes from the published release (>=0.8.0a1, pinned in the [e2e]
+# extra), which carries the loopback whitelist-only + get_client_by_id fixes.
 
 on:
   pull_request:
@@ -22,11 +19,6 @@ jobs:
     uses: OpenVoiceOS/gh-automations/.github/workflows/build-tests.yml@dev
     with:
       python_versions: '["3.10", "3.11", "3.12", "3.13"]'
-      # Install the unreleased hivescope (loopback whitelist-only + get_client_by_id
-      # fixes) before building/installing the bridge. --pre so its alpha deps resolve.
-      pre_install_pip: >-
-        --pre
-        "hivescope @ git+https://github.com/JarbasHiveMind/hivescope.git@fix/loopback-whitelist-only-connection"
       install_extras: 'e2e'
       test_path: 'tests/e2e/'
       pr_comment: false
