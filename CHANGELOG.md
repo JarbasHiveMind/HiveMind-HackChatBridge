@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.3a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.3a1) (2026-09-01)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.2a3...0.1.3a1)
+
+**Merged pull requests:**
+
+- fix\(deps\): raise floor pins to the proven HiveMind stack [\#32](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/32) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.2a3](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.2a3) (2026-08-15)
 
 [Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.2a2...0.1.2a3)
