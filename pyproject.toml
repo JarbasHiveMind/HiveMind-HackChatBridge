@@ -15,10 +15,8 @@ dynamic = ["version", "dependencies"]
 test = ["pytest"]
 # Real end-to-end suite (tests/e2e/). Boots a hivemind-core hub via hivescope
 # and drives the bridge's production HiveMessageBusClient path over a real
-# loopback WebSocket. hivescope must currently come from the
-# fix/loopback-whitelist-only-connection branch (the published build lacks the
-# loopback whitelist-only + get_client_by_id fixes); CI injects that via
-# pre_install_pip, so the constraint here is only a lower bound for local runs.
+# loopback WebSocket. hivescope comes from the published release (>=0.8.0a1),
+# which carries the loopback whitelist-only + get_client_by_id fixes.
 e2e = [
     "pytest",
     "pytest-timeout",

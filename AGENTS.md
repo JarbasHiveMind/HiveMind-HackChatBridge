@@ -35,9 +35,8 @@ inventing a new pattern here.
   hub — treat it as a shape/wiring check, not a live-behaviour guarantee.
 - `tests/e2e/` boots a real `hivemind-core` hub via `hivescope` and drives the
   bridge's production `HiveMessageBusClient` path over a real loopback
-  WebSocket (`.[e2e]` extra). It currently needs `hivescope` from the
-  `fix/loopback-whitelist-only-connection` branch, not the published release —
-  see the comment in `pyproject.toml`.
+  WebSocket (`.[e2e]` extra), using the published `hivescope` release
+  (>=0.8.0a1).
 - `uv`, never `pip`. If latest prereleases fail to install or resolve, that is
   a bug to FIX at the source, not to work around with a pin downgrade.
 
