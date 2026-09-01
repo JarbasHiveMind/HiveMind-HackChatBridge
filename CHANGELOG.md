@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.4a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.4a1) (2026-09-01)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.3a1...0.1.4a1)
+
+**Merged pull requests:**
+
+- fix\(ci\): install hivescope from the published release, not a deleted git branch [\#34](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/34) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.3a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.3a1) (2026-09-01)
 
 [Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.2a3...0.1.3a1)
