@@ -22,7 +22,7 @@ test = ["pytest"]
 e2e = [
     "pytest",
     "pytest-timeout",
-    "hivescope>=0.5.0a2",
+    "hivescope>=0.8.0a1",
     "websockets>=11",
 ]
 
