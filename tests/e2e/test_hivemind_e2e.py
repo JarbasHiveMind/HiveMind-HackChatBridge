@@ -106,14 +106,14 @@ def test_real_hivemind_round_trip():
     m = b.add_master("M0", use_loopback=True)
     # hivemind-core is deny-by-default / whitelist-only: grant exactly the type
     # the bridge injects.
-    m.register_satellite("hackchat-key", password="hackchat-pass",
+    m.register_satellite("hackchat-key", password="hackchat-correct-horse-battery-staple",
                          allowed_types=["recognizer_loop:utterance"])
     b.start_all()
 
     client = None
     try:
         client = _make_real_client(m.network_protocol.url,
-                                   "hackchat-key", "hackchat-pass")
+                                   "hackchat-key", "hackchat-correct-horse-battery-staple")
         client.connect(site_id="hackchat-site")
         client.wait_for_handshake(timeout=10)
         assert client.handshake_event.is_set(), "handshake did not complete"
