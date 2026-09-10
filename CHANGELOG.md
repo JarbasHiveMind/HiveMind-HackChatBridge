@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.5a1) (2026-09-10)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.4a6...0.1.5a1)
+
+**Merged pull requests:**
+
+- fix: declare a session per user so conversations do not share state [\#36](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/36) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.1.4a6](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.4a6) (2026-09-10)
 
 [Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.4a5...0.1.4a6)
