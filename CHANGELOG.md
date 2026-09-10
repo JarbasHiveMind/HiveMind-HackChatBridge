@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.4a6](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.4a6) (2026-09-10)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.4a5...0.1.4a6)
+
+**Merged pull requests:**
+
+- Update docker/setup-qemu-action action to v4 [\#31](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/31) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.1.4a5](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.4a5) (2026-09-10)
 
 [Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.4a4...0.1.4a5)
