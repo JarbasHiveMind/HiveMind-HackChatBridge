@@ -99,7 +99,8 @@ class JarbasHackChatBridge:
                       {"utterances": [utterance], "lang": self.lang},
                       {"destination": "hive_mind",
                        "platform": platform,
-                       "user": {"hackchat_username": user}})
+                       "user": {"hackchat_username": user},
+                       "session": {"session_id": f"hackchat-{user}"}})
         self.bus.emit(msg)
 
     def speak(self, utterance, user_data):

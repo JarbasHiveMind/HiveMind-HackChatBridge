@@ -116,3 +116,26 @@ def test_handle_speak_routes_back_to_user(monkeypatch):
                   {"user": {"hackchat_username": "alice"}})
     bus.mycroft_handlers["speak"](msg)
     assert sent == ["@alice , it is noon"]
+
+
+def test_send_to_hivemind_gets_distinct_per_user_sessions():
+    """Two HackChat users must map to two distinct Layer-1 sessions.
+
+    HIVEMIND-BRIDGE-1 §4: a client multiplexing several end-user
+    conversations over one connection maps each declared name to its own
+    session, never collapsing them into one.
+    """
+    bus = FakeBus()
+    bridge = JarbasHackChatBridge(username="Jarbas_BOT",
+                                  channel="test_channel",
+                                  bus=bus)
+    bridge.send_to_hivemind("what time is it", "alice")
+    bridge.send_to_hivemind("hello there", "bob")
+
+    assert len(bus.emitted) == 2
+    sid1 = bus.emitted[0].context["session"]["session_id"]
+    sid2 = bus.emitted[1].context["session"]["session_id"]
+
+    assert sid1 == "hackchat-alice"
+    assert sid2 == "hackchat-bob"
+    assert sid1 != sid2
