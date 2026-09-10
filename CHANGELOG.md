@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.4a2](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.4a2) (2026-09-10)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.4a1...0.1.4a2)
+
+**Merged pull requests:**
+
+- Update docker/build-push-action action to v7 [\#26](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/26) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.1.4a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.4a1) (2026-09-01)
 
 [Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.3a1...0.1.4a1)
