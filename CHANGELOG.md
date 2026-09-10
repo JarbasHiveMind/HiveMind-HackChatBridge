@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Update docker/metadata-action action to v6 [\#29](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/29) ([renovate[bot]](https://github.com/apps/renovate))
 - Update docker/login-action action to v4 [\#27](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/27) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [0.1.4a2](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.4a2) (2026-09-10)
