@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5a2](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.5a2) (2026-11-13)
+
+[Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.5a1...0.1.5a2)
+
+**Merged pull requests:**
+
+- ci: build\_tests collects the whole tests/ directory [\#43](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/pull/43) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.1.5a1](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/tree/0.1.5a1) (2026-09-10)
 
 [Full Changelog](https://github.com/JarbasHiveMind/HiveMind-HackChatBridge/compare/0.1.4a6...0.1.5a1)
