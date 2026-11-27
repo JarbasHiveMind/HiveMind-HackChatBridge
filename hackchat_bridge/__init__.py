@@ -4,6 +4,7 @@ from ovos_utils import create_daemon
 from ovos_utils.log import LOG
 
 from hivemind_bus_client import HiveMessageBusClient
+from hivemind_bus_client.identity import NodeIdentity
 from ovos_bus_client import Message
 
 from hackchat_bridge.hackchat import HackChat
@@ -28,7 +29,8 @@ class JarbasHackChatBridge:
                  self_signed=False,
                  lang="en-us",
                  bus=None,
-                 handshake_max_retries=10):
+                 handshake_max_retries=10,
+                 identity=None):
         self.status = "disconnected"
         self.username = username
         self.channel = channel
@@ -45,7 +47,8 @@ class JarbasHackChatBridge:
                                             host=host,
                                             port=port,
                                             password=password,
-                                            self_signed=self_signed)
+                                            self_signed=self_signed,
+                                            identity=identity or NodeIdentity(app_name="hackchat-bridge"))
             # bound the handshake retries, otherwise a stalled/unreachable
             # hub or a wrong password makes connect() retry forever
             self.bus.connect(handshake_max_retries=self.handshake_max_retries)
