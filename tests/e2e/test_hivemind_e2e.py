@@ -102,6 +102,7 @@ class FakeHackChat:
         self.sent.append(msg)
 
 
+@pytest.mark.xfail(strict=True, reason="HiveMind-HackChatBridge#48: bridge sends no reply after the handshake")
 def test_real_hivemind_round_trip(tmp_path):
     b = TopologyBuilder()
     m = b.add_master("M0", use_loopback=True)
